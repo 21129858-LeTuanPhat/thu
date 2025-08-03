@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./letter.css">
+</head>
+<body>
+    <div class="background">
+        <div class="letter-outer">
+
+            <input type="checkbox" hidden  class="cloud" id="checktim">
+
+            <label for="checktim" class="letter-outer-icon">
+            <i class="fa-solid fa-cloud"></i>
+
+        </label>
+        <div class="letter-content">
+            <h1>Thư mời</h1>
+            <p>Chiều đi xem phim không</p>
+        </div>
+        
+        </div>
+    </div>
+</body>
+
+<script>
+    const $ = document.querySelector.bind(document);
+    const letter_outerElement =$('.letter-outer');
+    const inputcheked =$('.cloud')
+    const iconElement =$('.letter-outer-icon')
+    const contentElement =$('.letter-content')
+    inputcheked.onchange= function(){
+        if(inputcheked.checked){
+    iconElement.style.display ='none'
+    letter_outerElement.style.setProperty('--top-color','transparent')
+    letter_outerElement.style.setProperty('--transparent-color','#b2f0e9')
+    letter_outerElement.style.setProperty('--tophe','none')
+    letter_outerElement.style.setProperty('--bottomhe','100%')
+    letter_outerElement.style.animation='fadeIn linear 0.5s';
+    setTimeout(function(){
+        contentElement.style.display='block'
+        contentElement.style.animation='fadeIn2 linear 0.4s forwards'
+    },1000)
+   }
+    }
+</script>
+</html>
